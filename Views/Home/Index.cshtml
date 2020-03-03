@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model TryingMyBestApp.Models.FormData
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Enter Email: </td>
+                <td>@Html.TextBoxFor(m => m.email)</td>
+            </tr>
+            <tr>
+                <td>Enter Name: </td>
+                <td>@Html.TextBoxFor(m => m.password)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit Form" /></td>
+            </tr>
+        </table>
+    }
+<h4 style="color:purple">
+    <b>ID:</b>    @ViewBag.email <br />
+    <b>Name:</b>  @ViewBag.password <br />
+</h4>
+</div>
